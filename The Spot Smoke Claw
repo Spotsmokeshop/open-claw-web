@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spot 24/7 - Smoke Shop in El Paso, TX</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #fff; margin: 0; padding: 20px; }
+        header { text-align: center; padding: 20px; background-color: #228B22; }
+        #delivery-banner { background-color: #FFD700; color: #000; padding: 10px; text-align: center; font-weight: bold; font-size: 1.2em; }
+        #search { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 1em; }
+        .location-card { background-color: #333; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+        .location-card h3 { margin-top: 0; color: #32CD32; }
+        a { color: #32CD32; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 10px; background-color: #228B22; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Spot 24/7 Smoke Shop</h1>
+        <p>Premium THCA, Vapes, Glass, and More - Open 24/7 at All Locations!</p>
+    </header>
+
+    <div id="delivery-banner">Delivery Coming Soon! Stay Tuned for Easy Ordering.</div>
+
+    <input type="text" id="search" placeholder="Search locations (e.g., Dyer, Zaragoza, 79924)...">
+
+    <div id="locations">
+        <div class="location-card" data-search="pebble hills 14087 pebble hills blvd 79938">
+            <h3>Pebble Hills Location</h3>
+            <p>Address: 14087 Pebble Hills Blvd, Ste 106, El Paso, TX 79938</p>
+            <p>Phone: (915) 543-0064</p>
+            <p>Hours: Open 24/7</p>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=14087+Pebble+Hills+Blvd,+El+Paso,+TX+79938" target="_blank">Get Directions</a></p>
+        </div>
+
+        <div class="location-card" data-search="dyer 9740 dyer st 79924 northeast">
+            <h3>Dyer St Location (Northeast)</h3>
+            <p>Address: 9740 Dyer St, #107, El Paso, TX 79924</p>
+            <p>Phone: (915) 316-2170</p>
+            <p>Hours: Open 24/7</p>
+            <p>Features: Lounge with pool tables</p>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=9740+Dyer+St,+El+Paso,+TX+79924" target="_blank">Get Directions</a></p>
+        </div>
+
+        <div class="location-card" data-search="zaragoza 1641 n zaragoza rd 79936">
+            <h3>Zaragoza Location</h3>
+            <p>Address: 1641 N Zaragoza Rd, El Paso, TX 79936</p>
+            <p>Phone: (915) 543-0064 (Main Line)</p>
+            <p>Hours: Open 24/7</p>
+            <p>Features: Drive-Thru, Lounge with pool tables</p>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=1641+N+Zaragoza+Rd,+El+Paso,+TX+79936" target="_blank">Get Directions</a></p>
+        </div>
+
+        <div class="location-card" data-search="kenazo 494 n kenazo ave 79928 horizon city">
+            <h3>Kenazo Ave Location (Horizon City)</h3>
+            <p>Address: 494 N Kenazo Ave, Horizon City, TX 79928</p>
+            <p>Phone: (915) 543-0064 (Main Line)</p>
+            <p>Hours: Open 24/7</p>
+            <p><a href="https://www.google.com/maps/dir/?api=1&destination=494+N+Kenazo+Ave,+Horizon+City,+TX+79928" target="_blank">Get Directions</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Spot 24/7. Delivery Coming Soon! Follow us on X: @thespotep</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const locations = document.querySelectorAll('.location-card');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            locations.forEach(card => {
+                const text = card.getAttribute('data-search').toLowerCase();
+                card.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
